@@ -14,12 +14,14 @@ const addTaskButton = function () {
       
       return inputElements.classList.add('error')
    }
-
+   
    const content_result = document.createElement('div')
    content_result.classList.add('content_result')
 
    const content_task = document.createElement('p')
+   content_task.classList.add('name_task')
    content_task.innerText= inputElements.value
+   
    
    content_task.addEventListener('click',()=> handleTaskComplete(content_task))
    
@@ -40,6 +42,15 @@ const addTaskButton = function () {
 
    inputElements.value=""
 }
+const verification_task = ()=>{
+  
+   
+   
+ 
+
+}
+
+
 const removeTask= function () {
    const inputIsValid =validateInput()
    if(inputIsValid){
@@ -70,6 +81,7 @@ const taskDelete=(content_result, content_task)=>{
 
 buttonAdd.addEventListener('click', () =>{
    addTaskButton()
+   verification_task()
 })
 inputElements.addEventListener('change',() => {
    removeTask()
