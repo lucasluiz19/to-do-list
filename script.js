@@ -22,34 +22,23 @@ const addTaskButton = function () {
    content_task.classList.add('name_task')
    content_task.innerText= inputElements.value
    
-   
-   content_task.addEventListener('click',()=> handleTaskComplete(content_task))
-   
    const delete_icon = document.createElement('i')
    delete_icon.classList.add('far')
    delete_icon.classList.add('fa-trash-alt')
    
+   content_task.addEventListener('click',()=> handleTaskComplete(content_task))
+      
    delete_icon.addEventListener('click', ()=> taskDelete(content_result,content_task))
    
-
-
    content_result.appendChild(content_task)
    
    content_result.appendChild(delete_icon)
    
    conteiner_result.appendChild(content_result)
 
-
    inputElements.value=""
-}
-const verification_task = ()=>{
   
-   
-   
- 
-
 }
-
 
 const removeTask= function () {
    const inputIsValid =validateInput()
@@ -61,7 +50,7 @@ const removeTask= function () {
 const handleTaskComplete = (content_task) => {
    const tasks = conteiner_result.childNodes;
    for(const task of tasks ){
-      if (task.firstChild === content_task) {
+      if (task.firstChild===content_task) {
          task.firstChild.classList.toggle("completed")
          
       }
@@ -77,11 +66,13 @@ const taskDelete=(content_result, content_task)=>{
 
       }
    }
+   
 }
 
 buttonAdd.addEventListener('click', () =>{
    addTaskButton()
-   verification_task()
+   
+   
 })
 inputElements.addEventListener('change',() => {
    removeTask()
